@@ -2,7 +2,7 @@ import Navbar from "../Navbar/Navbar";
 
 function Header() {
     return ( 
-        <header className="flex">
+        <header className="flex justify-around bg-primary-A text-white p-4">
             <span>Olá, viajante</span>
             <h1>Bem vindo ao CineApp</h1>
             <Navbar/>
