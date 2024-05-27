@@ -2,25 +2,30 @@ import data from '../../articles.json'
 
 function Home() {
     console.log(data)
-    return ( 
-        <main>
-            <input type="text" name="busca" id="busca" placeholder="Digite aqui sua busca" />
-            <div className='lista-filmes'>
+    return (
+        <>
+            <input type="button" id="buscar" placeholder='Digite sua busca'/>
+            
+            <div className='grid grid-cols-3 gap-3'>
                 {data.map(filme => (
-                    <h1>{filme.title}</h1>
+                    <div className='card' key={filme.title}>
+                        <h1>{filme.title}</h1>
+                        <img src="/public/untitled-goose-game-grabs-another-goty-prize-at-2020-gdc-awa_bpsn.jpg" alt="" />
+                        <div className='tag'>
+                            {filme.tags.map((tag) =>(
+                                <span key={tag}> {tag} </span>
+                            ))}
+                        </div>
+                        <div className='text'>
+                            {filme.text.map((text) =>(
+                                <span key={text} className='text-blue-900'> {text} </span>
+                            ))}
+                        </div>
+                    </div>
                 ))}
             </div>
-        </main>
+        </>
      );
 }
 
 export default Home;
-
-<div className='card'>
-    <h1>Título do filme</h1>
-    <img src=""/>
-    <div className='tags'>
-        <span>Tags</span>
-    </div>
-    <p>Texto do post</p>
-</div>
