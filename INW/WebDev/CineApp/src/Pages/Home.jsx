@@ -10,7 +10,7 @@ function Home() {
                 {data.map(filme => (
                     <div className='card' key={filme.title}>
                         <h1>{filme.title}</h1>
-                        <img src="/public/untitled-goose-game-grabs-another-goty-prize-at-2020-gdc-awa_bpsn.jpg" alt="" />
+                        <img className='mb-2' src="/public/untitled-goose-game-grabs-another-goty-prize-at-2020-gdc-awa_bpsn.jpg" alt="" />
                         <div className='tag'>
                             {filme.tags.map((tag) =>(
                                 <span key={tag}> {tag} </span>
