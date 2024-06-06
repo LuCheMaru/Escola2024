@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="Preço da diária" labelPlacement="floating"
+     placeholder="diaria" [(ngModel)]="diaria">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="0" max="100" step="1" [(ngModel)]="dias"></ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label>Dias: {{ dias }}</ion-label>
+  </ion-item>
+
+  <ion-button expand="block" (click)="pagar()">Pagar</ion-button>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "valoresTelas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
