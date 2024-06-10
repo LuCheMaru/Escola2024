@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 function Filmes() {
 
@@ -6,23 +7,30 @@ function Filmes() {
     
     const apiKey ='api_key=7c572a9f5b3ba776080330d23bb76e1e'
     const urlBase = 'https://api.themoviedb.org/3/movie/'
-    const urlImg = 'https://image.tmdb.org/t/p/w342/'
+    const urlImg = 'https://image.tmdb.org/t/p/w780/'
 
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=7c572a9f5b3ba776080330d23bb76e1e')
-    .then(response => response.json())
-    .then(response => setFilmes(response.results))
-    .catch(erro => console.log(erro))
+    useEffect(() => {
+        fetch(`${urlBase}popular?${apiKey}`)
+        .then(response => response.json())
+        .then(response => setFilmes(response.results))
+        .catch(error => console.log(error))
+    },[])
 
     return ( 
         <>
         <h1>Filmes</h1>
-        {
-            filmes.map(filme => (
-                <div className="card-filme" key={filme.id}>
-                    <h1>{filme.title}</h1>
-                </div>
-            ))
-        }
+        <div className="listaFilmes flex flex-row gap-3">
+            {
+                filmes.map(filme => (
+                    <div className="card-filme" key={filme.id}>
+                        <img className="w-auto" src={`${urlImg}${filme.poster_path}`}/>
+                        <h1>{filme.title}</h1>
+                        <Link className="bg-blue-300" to={`${filme.id}`}>Saber Mais</Link>
+                    </div>
+                ))
+            }
+        </div>
+        
         </>
      );
 }
