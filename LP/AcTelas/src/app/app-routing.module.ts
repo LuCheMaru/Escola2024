@@ -12,14 +12,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'reserva/:diaria/:dias/:pagamento',
-    loadChildren: () => import('./reserva/reserva.module').then( m => m.ReservaPageModule)
+    path: 'resultado/:medTemp',
+    loadChildren: () => import('./resultado/resultado.module').then( m => m.ResultadoPageModule)
   },
-  {
-    path: 'finalizar/:pagamento',
-    loadChildren: () => import('./finalizar/finalizar.module').then( m => m.FinalizarPageModule)
-  },
-
 ];
 
 @NgModule({

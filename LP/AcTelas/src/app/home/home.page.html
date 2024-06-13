@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Temperatura nos últimos quatro meses
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-range label="Primeiro Mês"
+  [pin]="true" [pinFormatter]="pinFormatter" max="100"
+  [(ngModel)]="temp1"></ion-range>
+
+  <ion-range label="Segundo Mês"
+  [pin]="true" [pinFormatter]="pinFormatter" max="100"
+  [(ngModel)]="temp2"></ion-range>
+
+  <ion-range label="Terceiro Mês"
+  [pin]="true" [pinFormatter]="pinFormatter" max="100"
+  [(ngModel)]="temp3"></ion-range>
+
+  <ion-range label="Quarto Mês"
+  [pin]="true" [pinFormatter]="pinFormatter" max="100"
+  [(ngModel)]="temp4"></ion-range>
+
+  <ion-button expand="block" (click)="mediaTemp()">Ver</ion-button>
+</ion-content>

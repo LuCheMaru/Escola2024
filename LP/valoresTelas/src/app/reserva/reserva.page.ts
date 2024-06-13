@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,12 +13,17 @@ export class ReservaPage implements OnInit {
   dias: any;
   pagamento: any;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.diaria = this.activatedRoute.snapshot.paramMap.get('diaria');
     this.dias = this.activatedRoute.snapshot.paramMap.get('dias');
     this.pagamento = this.activatedRoute.snapshot.paramMap.get('pagamento');
+  }
+
+  confirmarReserva(){
+    this.router.navigateByUrl(`/finalizar/${this.pagamento}`)
   }
 
 }

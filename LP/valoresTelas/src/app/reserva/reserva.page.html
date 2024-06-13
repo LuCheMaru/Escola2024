@@ -5,7 +5,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-label>{{diaria}}</ion-label><br>
-  <ion-label>{{dias}}</ion-label><br>
-  <ion-label>{{pagamento}}</ion-label><br>
+  <ion-label>Valor da diária{{diaria}}</ion-label><br>
+  <ion-label>Quantidade de dias{{dias}}</ion-label><br>
+  <ion-label>Valor final: {{pagamento}}</ion-label><br>
+
+  <ion-button expand="block" color="danger" routerLink="/">Corrigir</ion-button>
+  <ion-button expand="block" color="success" (click)="confirmarReserva()">Confirmar</ion-button>
 </ion-content>

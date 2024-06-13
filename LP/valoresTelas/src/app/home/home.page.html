@@ -8,17 +8,13 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-input label="Preço da diária" labelPlacement="floating"
-     placeholder="diaria" [(ngModel)]="diaria">
+    <ion-input label="Preço da diária" labelPlacement="floating" [(ngModel)]="diaria">
     </ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-range min="0" max="100" step="1" [(ngModel)]="dias"></ion-range>
-  </ion-item>
-  <ion-item>
-    <ion-label>Dias: {{ dias }}</ion-label>
-  </ion-item>
+  <ion-range aria-label="Qtd de dias" min="0" max="100" [pin]="true"
+   [pinFormatter]="pinFormatter" [(ngModel)]="dias"></ion-range>
+
 
   <ion-button expand="block" (click)="pagar()">Pagar</ion-button>
 </ion-content>

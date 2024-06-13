@@ -8,19 +8,21 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
+  constructor(public router:Router) {}
 
-  diaria = 0;
-  dias = 0;
-  pagamento = 0;
-
-  constructor(public router: Router) {}
+  temp1 = 0;
+  temp2 = 0;
+  temp3 = 0;
+  temp4 = 0;
+  medTemp = 0;
 
   pinFormatter(value: number) {
-    return `${value} dias`;
+    return `${value} graus`;
   }
-  pagar(){
-    this.pagamento = this.diaria * this.dias;
+
+  mediaTemp(){
+    this.medTemp = (this.temp1 + this.temp2 + this.temp3 + this.temp4)/4
     this.router.navigateByUrl
-    (`/reserva/${this.diaria}/${this.dias}/${this.pagamento}`);
+    (`/resultado/${this.medTemp}`);
   }
 }
