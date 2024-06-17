@@ -19,7 +19,7 @@ function Filmes() {
     return ( 
         <>
         <h1>Filmes</h1>
-        <div className="listaFilmes flex flex-row gap-3">
+        <div className="listaFilmes grid flex-row gap-10 grid-cols-2">
             {
                 filmes.map(filme => (
                     <div className="card-filme" key={filme.id}>
