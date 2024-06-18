@@ -19,10 +19,13 @@ function DetalheFilmes(){
 
     return (
         <>
-            <div className="detalhe">
-                <img className="imagem flex" src={`${urlImg}${filme.backdrop_path}`} alt="" />
-                <h1> {filme.title}</h1>
-                <p>{filme.overview}</p>
+            <div className="detalhe flex flex-row gap-10 p-10">
+                <img src={`${urlImg}${filme.backdrop_path}`} alt="" />
+                <div className="info grid-cols-2">
+                    <h1>{filme.title}</h1>
+                    <p>{filme.overview}</p>
+                </div>
+                
             </div>
             
         </>
