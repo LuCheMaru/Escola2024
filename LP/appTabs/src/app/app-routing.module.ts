@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'filme-detalhe',
-    loadChildren: () => import('./filme-detalhe/filme-detalhe.module').then( m => m.FilmeDetalhePageModule)
+    loadChildren: () => import('./filme-detalhe/filme-detalhe.module').then(m => m.FilmeDetalhePageModule)
   }
 ];
 @NgModule({
@@ -17,4 +17,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

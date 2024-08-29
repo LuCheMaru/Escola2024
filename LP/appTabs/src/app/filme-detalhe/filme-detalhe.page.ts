@@ -1,7 +1,5 @@
-import { Router } from '@angular/router';
-import { IFilme } from '../model/IFilme';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-filme-detalhe',
@@ -13,10 +11,10 @@ export class FilmeDetalhePage implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(param =>{
+    this.route.queryParams.subscribe(params => {
       const getNav = this.router.getCurrentNavigation();
-      if(getNav?.extras.state){
-        this.filme = getNav.extras.state['paramFilmes'];
+      if (getNav?.extras.state) {
+        this.filme = getNav.extras.state['paramFilme'];
       }
     });
   }

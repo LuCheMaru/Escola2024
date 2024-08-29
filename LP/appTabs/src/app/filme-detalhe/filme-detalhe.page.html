@@ -10,14 +10,15 @@
 <ion-content color="light">
   <ion-card *ngIf="filme">
     <ion-card-header>
-      <img *ngIf="filme.cartaz" src="{{filme.cartaz}}"/>
+      <img *ngIf="filme.cartaz" src="{{filme.cartaz}}" />
       <ion-icon *ngIf="!filme.cartaz" name="videocam-off"></ion-icon>
     </ion-card-header>
 
     <ion-card-content>
       <h1>{{filme.nome}}</h1>
       <p>{{filme.lancamento}}
-        <ion-chip [color]="filme.classificacao < 5 ? 'danger' : ((filme.classificacao < 7 ? 'warning' : 'success'))" outline>
+        <ion-chip [color]="filme.classificacao < 5 ? 'danger' : ((filme.classificacao < 7 ? 'warning' : 'success'))"
+          outline>
           <ion-label>{{filme.classificacao}}</ion-label>
         </ion-chip>
       </p>
