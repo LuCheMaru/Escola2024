@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="nome" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nota privada</ion-label>
+    <ion-input [(ngModel)]="nota" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Chave</ion-label>
+    <ion-input [(ngModel)]="secretKey" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="encryptMessage()">Armazenar dados</ion-button>
+  <ion-button expand="full" (click)="decryptMessage()">Descriptografar</ion-button>
+
+  <ion-item>
+    <ion-label>Informações Criptografada</ion-label>
+    <ion-textarea [(ngModel)]="encryptedMessage" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Mensagem Descriptografada</ion-label>
+    <ion-textarea [(ngModel)]="decryptedMessage" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Mensagem Descriptografada</ion-label>
+    <ion-textarea [(ngModel)]="decryptedMessage1" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Mensagem Descriptografada</ion-label>
+    <ion-textarea [(ngModel)]="decryptedMessage2" readonly></ion-textarea>
+  </ion-item>
+</ion-content>
