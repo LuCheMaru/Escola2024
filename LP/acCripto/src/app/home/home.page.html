@@ -36,6 +36,16 @@
   </ion-item>
 
   <ion-item>
+    <ion-label>Informações Criptografada</ion-label>
+    <ion-textarea [(ngModel)]="encryptedMessage1" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Informações Criptografada</ion-label>
+    <ion-textarea [(ngModel)]="encryptedMessage2" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
     <ion-label>Mensagem Descriptografada</ion-label>
     <ion-textarea [(ngModel)]="decryptedMessage" readonly></ion-textarea>
   </ion-item>
