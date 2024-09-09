@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'descriptografar/:encryptedMessage/:encryptedMessage1/:encryptedMessage2',
+    path: 'descriptografar/:encryptedMessage/:encryptedMessage1/:encryptedMessage2/:secretKey',
     loadChildren: () => import('./descriptografar/descriptografar.module').then( m => m.DescriptografarPageModule)
   },
 

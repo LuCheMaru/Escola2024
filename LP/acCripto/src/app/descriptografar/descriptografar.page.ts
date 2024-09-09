@@ -7,11 +7,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./descriptografar.page.scss'],
 })
 export class DescriptografarPage implements OnInit {
-decryptMessage() {
-throw new Error('Method not implemented.');
-}
-
-  constructor(private activatedRoute: ActivatedRoute) { }
 
   encryptedMessage: any;
   encryptedMessage1: any;
@@ -21,6 +16,9 @@ throw new Error('Method not implemented.');
   decryptedMessage: string = '';
   decryptedMessage1: string = '';
   decryptedMessage2: string = '';
+
+  constructor(private activatedRoute: ActivatedRoute) { }
+
   ngOnInit() {
     this.encryptedMessage = this.activatedRoute.snapshot.paramMap.get('encryptedMessage')
     this.encryptedMessage1 = this.activatedRoute.snapshot.paramMap.get('encryptedMessage1')

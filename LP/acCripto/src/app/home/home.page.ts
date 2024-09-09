@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -8,7 +8,7 @@ import * as CryptoJS from 'crypto-js';
 })
 export class HomePage {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   nome: string = '';
   email: string = '';
@@ -17,10 +17,6 @@ export class HomePage {
   encryptedMessage: string = '';
   encryptedMessage1: string = '';
   encryptedMessage2: string = '';
-
-  decryptedMessage: string = '';
-  decryptedMessage1: string = '';
-  decryptedMessage2: string = '';
 
   encryptMessage() {
     if (this.nome && this.email && this.nota && this.secretKey) {
@@ -34,23 +30,9 @@ export class HomePage {
       this.encryptedMessage2 = encrypted2;
     }
   }
-  decryptMessage() {
-    if (this.nome && this.secretKey) {
-      const bytes = CryptoJS.AES.decrypt(this.nome, this.secretKey);
-      const decrypted = bytes.toString(CryptoJS.enc.Utf8);
-      this.decryptedMessage = decrypted;
-    }
 
-    if (this.email && this.secretKey) {
-      const bytes1 = CryptoJS.AES.decrypt(this.email, this.secretKey);
-      const decrypted1 = bytes1.toString(CryptoJS.enc.Utf8);
-      this.decryptedMessage1 = decrypted1;
-    }
-
-    if (this.nota && this.secretKey) {
-      const bytes2 = CryptoJS.AES.decrypt(this.nota, this.secretKey);
-      const decrypted2 = bytes2.toString(CryptoJS.enc.Utf8);
-      this.decryptedMessage2 = decrypted2;
-    }
+  proximaPag() {
+    this.router.navigateByUrl
+    (`/descriptografar/${this.encryptedMessage}/${this.encryptedMessage1}/${this.encryptedMessage2}/${this.secretKey}`)
   }
 }
