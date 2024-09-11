@@ -1,138 +1,23 @@
 
-import './App.css'
+import CardSidebar from './components/CardSidebar'
+import Container from './components/Container'
+import Header from './components/Header'
+import Main from './components/Main'
+import Sidebar from './components/Sidebar'
 
 function App() {
 
   return (
     <>
-      <header>
-        <div className='caixa0'></div>
-      </header>
-      <body>
-        <div className='retangulo'>
-          <div className='caixa1'>
-          </div>
-          <div className='caixa1'>
-          </div>
-          <div className='caixa1'>
-          </div>
-        </div>
-        <div className='caixa10'>
-          <div className='caixa'>
-            <div className='caixa1'>
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-          </div>
-
-          <div className='caixa'>
-            <div className='caixa1'>
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-          </div>
-
-          <div className='caixa'>
-            <div className='caixa1'>
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-
-            <div className="caixa1">
-              <div className='caixa2'>
-              
-              </div>
-              <div className='caixa2'>
-              
-              </div>
-            </div>
-          </div>
-        </div>
-      </body>
+      <Header/>
+      <Container>
+        <Sidebar>
+          <CardSidebar/>
+          <CardSidebar/>
+          <CardSidebar/>
+        </Sidebar>
+        <Main/>
+      </Container>
     </>
   )
 }
