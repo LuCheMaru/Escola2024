@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-descriptografar',
@@ -8,10 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DescriptografarPage implements OnInit {
 
+  secretKey: any;
   encryptedMessage: any;
   encryptedMessage1: any;
   encryptedMessage2: any;
-  secretKey: any;
 
   decryptedMessage: string = '';
   decryptedMessage1: string = '';
@@ -26,19 +27,15 @@ export class DescriptografarPage implements OnInit {
   }
 
   decryptMessage() {
-    if (this.encryptedMessage && this.secretKey) {
+    if (this.encryptedMessage && this.encryptedMessage1 && this.encryptedMessage2 && this.secretKey) {
       const bytes = CryptoJS.AES.decrypt(this.encryptedMessage, this.secretKey);
       const decrypted = bytes.toString(CryptoJS.enc.Utf8);
       this.decryptedMessage = decrypted;
-    }
 
-    if (this.encryptedMessage1 && this.secretKey) {
       const bytes1 = CryptoJS.AES.decrypt(this.encryptedMessage1, this.secretKey);
       const decrypted1 = bytes1.toString(CryptoJS.enc.Utf8);
       this.decryptedMessage1 = decrypted1;
-    }
 
-    if (this.encryptedMessage2 && this.secretKey) {
       const bytes2 = CryptoJS.AES.decrypt(this.encryptedMessage2, this.secretKey);
       const decrypted2 = bytes2.toString(CryptoJS.enc.Utf8);
       this.decryptedMessage2 = decrypted2;

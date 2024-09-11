@@ -1,15 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>descriptografar</ion-title>
+    <ion-buttons slot="start" defaultHref="home">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <ion-label>{{encryptedMessage}}</ion-label>
-  <ion-label>{{encryptedMessage1}}</ion-label>
-  <ion-label>{{encryptedMessage2}}</ion-label>
-
   <ion-item>
     <ion-label position="floating">Nome</ion-label>
     <ion-input [(ngModel)]="encryptedMessage" type="text"></ion-input>
@@ -33,7 +31,18 @@
 
   <ion-button expand="full" (click)="decryptMessage()">Descriptografar</ion-button>
 
-  <ion-label>{{decryptedMessage}}</ion-label>
-  <ion-label>{{decryptedMessage1}}</ion-label>
-  <ion-label>{{decryptedMessage2}}</ion-label>
+  <ion-item>
+    <ion-label>Nome: </ion-label>
+    <ion-textarea [(ngModel)]="decryptedMessage" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Email: </ion-label>
+    <ion-textarea [(ngModel)]="decryptedMessage1" readonly></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nota: </ion-label>
+    <ion-textarea [(ngModel)]="decryptedMessage2" readonly></ion-textarea>
+  </ion-item>
 </ion-content>

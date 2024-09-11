@@ -13,6 +13,7 @@ export class HomePage {
   nome: string = '';
   email: string = '';
   nota: string = '';
+
   secretKey: string = '';
   encryptedMessage: string = '';
   encryptedMessage1: string = '';
@@ -32,7 +33,11 @@ export class HomePage {
   }
 
   proximaPag() {
+    const nomeEncriptado = encodeURIComponent(this.encryptedMessage);
+    const emailEncriptado = encodeURIComponent(this.encryptedMessage1);
+    const notaEncriptada = encodeURIComponent(this.encryptedMessage2);
+
     this.router.navigateByUrl
-    (`/descriptografar/${this.encryptedMessage}/${this.encryptedMessage1}/${this.encryptedMessage2}/${this.secretKey}`)
+    (`descriptografar/${this.secretKey}/${nomeEncriptado}/${emailEncriptado}/${notaEncriptada}`)
   }
 }
