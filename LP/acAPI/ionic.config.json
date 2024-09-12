@@ -1,0 +1,7 @@
+{
+  "name": "acAPI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
