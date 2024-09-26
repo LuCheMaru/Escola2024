@@ -29,6 +29,18 @@ export class HomePage {
   }
 
   async deletarProduto(id: string) {
-
+    const alert = await this.alertController.create({
+      buttons: [
+        {
+          text:'Não',
+          role: 'cancel',
+          handler: () => {
+            this.prodService.deletar(id);
+          },
+        },
+      ],
+    });
+    await alert.present();
+    this.buscarProdutos();
   }
 }
