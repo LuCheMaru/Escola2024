@@ -26,6 +26,6 @@ export class ProdutoService {
   }
 
   deletar(id: string) {
-    return this.afs.doc('produtos/' + id).delete;
+    return this.afs.doc('produtos/' + id).delete();
   }
 }

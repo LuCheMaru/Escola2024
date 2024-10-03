@@ -1,4 +1,4 @@
-import { ProdutoService } from 'src/app/services/produto.service';
+import { ProdutoService } from './../../services/produto.service';
 import { Produto } from './../../models/Produto';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './cadastro-produto.page.html',
   styleUrls: ['./cadastro-produto.page.scss'],
 })
-export class CadastroProdutoPage implements OnInit {
+export class CadastroProdutoPage {
 
   produto: Produto = new Produto();
 
@@ -16,9 +16,6 @@ export class CadastroProdutoPage implements OnInit {
     private prodService: ProdutoService,
     private route: Router
   ) { }
-
-  ngOnInit() {
-  }
 
   salvar() {
     this.prodService.salvar(this.produto);

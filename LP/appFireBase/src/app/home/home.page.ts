@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produto } from '../models/Produto';
 import { ProdutoService } from '../services/produto.service';
 import { AlertController } from '@ionic/angular';
@@ -8,7 +8,7 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   public listaProdutos: Produto[] = []
   constructor(private prodService: ProdutoService, private alertController: AlertController) {}
 
@@ -17,7 +17,7 @@ export class HomePage {
   }
 
   buscarProdutos() {
-    this.prodService.buscarProdutos().subscribe(dadosRetorno => {
+    this.prodService.buscarProdutos().subscribe((dadosRetorno:any) => {
       this.listaProdutos = dadosRetorno.map((registro:any) => (
         {
           id: registro.payload.doc.id,
@@ -30,14 +30,21 @@ export class HomePage {
 
   async deletarProduto(id: string) {
     const alert = await this.alertController.create({
+      header: 'Confirmar deletar produto?',
       buttons: [
         {
           text:'Não',
           role: 'cancel',
           handler: () => {
-            this.prodService.deletar(id);
           },
         },
+        {
+          text:'Sim',
+          role:'confirm',
+          handler: () => {
+            this.prodService.deletar(id)
+          }
+        }
       ],
     });
     await alert.present();
