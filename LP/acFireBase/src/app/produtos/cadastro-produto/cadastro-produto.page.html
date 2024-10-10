@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="ion-text-center">Cadastro</h1>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="produto.nome"></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Espécie</ion-label>
+    <ion-input [(ngModel)]="produto.especie"></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Raça</ion-label>
+    <ion-input [(ngModel)]="produto.raca"></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Idade</ion-label>
+    <ion-input [(ngModel)]="produto.idade" class="ion-text-left" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Informações adicionais</ion-label>
+    <ion-input [(ngModel)]="produto.info"></ion-input>
+  </ion-item>
+  <br>
+
+  <ion-button expand="block" (click)="salvar()">Salvar</ion-button>
+  <ion-button expand="block" fill="outline" routerLink="/">Voltar</ion-button>
+</ion-content>
