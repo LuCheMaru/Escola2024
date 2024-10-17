@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
 
   ngOnInit(){
     this.buscarProdutos();
+    this.buscarProdutos1();
   }
 
   buscarProdutos() {
@@ -25,7 +26,21 @@ export class HomePage implements OnInit {
           especie: registro.payload.doc.data()['especie'],
           raca: registro.payload.doc.data()['raca'],
           idade: registro.payload.doc.data()['idade'],
-          info: registro.payload.doc.data()['info']
+          info: registro.payload.doc.data()['info'],
+        }
+      ))
+    })
+  }
+
+  buscarProdutos1() {
+    this.prodService.buscarProdutos().subscribe((dadosRetorno:any) => {
+      this.listaProdutos = dadosRetorno.map((registro:any) => (
+        {
+          id: registro.payload.doc.id,
+          nome1: registro.payload.doc.data()['nome1'],
+          tel: registro.payload.doc.data()['tel'],
+          exp: registro.payload.doc.data()['exp'],
+          esp: registro.payload.doc.data()['esp']
         }
       ))
     })
@@ -52,5 +67,28 @@ export class HomePage implements OnInit {
     });
     await alert.present();
     this.buscarProdutos();
+  }
+
+  async deletarProduto1(id: string) {
+    const alert = await this.alertController.create({
+      header: 'Confirmar deletar produto?',
+      buttons: [
+        {
+          text:'Não',
+          role: 'cancel',
+          handler: () => {
+          },
+        },
+        {
+          text:'Sim',
+          role:'confirm',
+          handler: () => {
+            this.prodService.deletar(id)
+          }
+        }
+      ],
+    });
+    await alert.present();
+    this.buscarProdutos1();
   }
 }

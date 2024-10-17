@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item >
+    <ion-label>Pets</ion-label>
+  </ion-item>
+
   <ion-item *ngIf="listaProdutos.length === 0">
     <ion-label>Nenhum registro encontrado</ion-label>
   </ion-item>
@@ -33,6 +37,40 @@
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/produtos/cadastro-produto">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-item >
+    <ion-label>Cuidadores</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="listaProdutos.length === 0">
+    <ion-label>Nenhum registro encontrado</ion-label>
+  </ion-item>
+
+  <ion-item-sliding *ngFor="let prod of listaProdutos">
+    <ion-item lines="full">
+      <ion-label>Nome: {{prod.nome1}}</ion-label>
+      <ion-label>Telefone: {{prod.tel}}</ion-label>
+      <ion-label>Experiência(anos): {{prod.exp}}</ion-label>
+      <ion-label>Especialidade: {{prod.esp}}</ion-label>
+      <ion-label>{{prod.info}}</ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option color="warning" routerLink="/produtos/alterar-produto1/{{prod.id}}">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-item-option>
+
+      <ion-item-option color="danger" (click)="deletarProduto1(prod.id)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-fab vertical="bottom" horizontal="start " slot="fixed">
+    <ion-fab-button routerLink="/produtos/cadastro-produto1/cadastro-produto1.html">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
