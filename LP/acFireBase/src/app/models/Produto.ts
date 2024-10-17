@@ -6,9 +6,4 @@ export class Produto {
   raca: string;
   idade: number;
   info: string;
-
-  nome1:string;
-  tel:number;
-  exp:number;
-  esp:string;
 }

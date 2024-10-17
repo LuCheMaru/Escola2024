@@ -1,7 +1,7 @@
-import { ProdutoService } from './../../services/produto.service';
-import { Produto } from './../../models/Produto';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Produto1 } from 'src/app/models/Produto1';
+import { Produto1Service } from 'src/app/services/produto1.service';
 
 @Component({
   selector: 'app-cadastro-produto1',
@@ -10,15 +10,15 @@ import { Router } from '@angular/router';
 })
 export class CadastroProduto1Page{
 
-  produto: Produto = new Produto();
+  produto1: Produto1 = new Produto1();
 
   constructor(
-    private prodService: ProdutoService,
+    private prodService1: Produto1Service,
     private route: Router
   ) { }
 
-  salvar() {
-    this.prodService.salvar(this.produto);
+  salvar1() {
+    this.prodService1.salvar1(this.produto1);
     this.route.navigateByUrl('/');
   }
 
