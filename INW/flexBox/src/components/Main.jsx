@@ -15,31 +15,33 @@ export default function Main(){
 
     return(
       <>
-          <div className='bg-slate-700 w-3/4 grid grid-cols-4 pl-20 items-center'>
-            <h1>Plants vs Zombies</h1>
+        <div className='bg-gray-950 w-3/4 grid grid-row-4 pl-20 items-center'>
+          <div className='bg-gray-950 w-3/4 grid grid-cols-4 pl-20 items-center'>
+            <b className="text-gray-400">Plants vs Zombies</b>
             {artistas
               .filter(artista => artista.theme === "pvz")
               .map(artista => (
                 <Link to={`/artistas/${artista._id}`}>
-                  <div className='bg-red-700 w-28 h-28 flex flex-col justify-around items-center'>
-                    <p>{artista.name}</p>
+                  <div className='bg-fuchsia-950 w-28 h-28 flex flex-col justify-around items-center text-gray-200'>
+                    <b>{artista.name}</b>
                   </div>
                 </Link>
               ))}<br/>
           </div>
         
-          <div className='bg-slate-700 w-3/4 grid grid-cols-4 pl-20 items-center'>
-              <h1>Five nights at Freddy's</h1>
+          <div className='bg-gray-950 w-3/4 grid grid-cols-4 pl-20 items-center'>
+              <b className="text-gray-400">Five nights at Freddy's</b>
               {artistas
                 .filter(artista => artista.theme === "fnaf")
                 .map(artista => (
                   <Link to = {`/artistas/${artista._id}`}>
-                    <div className='bg-red-700 w-28 h-28 flex flex-col justify-around items-center'>
-                      <p>{artista.name}</p>
+                    <div className='bg-fuchsia-950 w-28 h-28 flex flex-col justify-around items-center text-gray-200'>
+                      <b>{artista.name}</b>
                     </div>
                   </Link>
                 ))}
           </div>
+        </div>
       </>
     )
 }
