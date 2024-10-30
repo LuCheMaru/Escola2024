@@ -15,8 +15,9 @@ export default function Artista(){
 
     return(
         <>
-        <div className="bg-gray-950 w-3/4 grid grid-row-4 pl-20">
-            <h1 style={{color: 'white'}}>Artista: {artista.name}</h1>
+        <div className="bg-gray-950 w-3/4">
+            <b className="text-gray-200 text-5xl">Artista: {artista.name}</b>
+            <h1 className="text-gray-200">{artista.desc}</h1>
         </div>
         </>
     )
